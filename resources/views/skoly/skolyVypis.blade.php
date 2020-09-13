@@ -12,11 +12,13 @@
     @foreach ($skola as $s)
    <tbody>
     <tr>
-       <td>{{ $s->nazev }}</td>
+       <td>{{ $s->nazev_skoly }}</td>
        <td>{{ $s->nazev_mesta }}</td>
     </tr>
 </tbody>
     @endforeach
  </table>
+
+{{ $skola->links() }}
 
 @endsection

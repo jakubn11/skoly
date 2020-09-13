@@ -13,11 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/skoly', 'skolyController@index');
+Route::get('/', 'skolyController@index');
 
 Route::get('/mesta', 'mestaController@index');
 
-Route::get('/', function () {
+Route::get('/pocetPrijatychIT', 'pocetPrijatych@IT');
+
+Route::get('/pocetPrijatychOA', 'pocetPrijatych@OA');
+
+Route::get('/home', function () {
     return view('home.home');
 });
 

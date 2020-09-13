@@ -9,7 +9,8 @@ class mestaController extends Controller
 {
     public function index()
     {
-        $mesta = DB::table('mesto')->get();
-        return view('mesta.mestaVypis', ['mesta' => $mesta]);
+        $mesta = DB::table('mesto')
+        ->paginate(15); 
+        return view('mesta.mestaVypis', compact('mesta'));
     }
 }
