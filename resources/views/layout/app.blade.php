@@ -11,14 +11,20 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
 
-<style>
-    table {margin-top: 20px}
-</style>
+    <style>
+     table {
+         margin-top: 20px
+         }
+     .navbar {
+        position: fixed; /* Set the navbar to fixed position */
+        top: 0; /* Position the navbar at the top of the page */
+        width: 100%; /* Full width */
+        }
+    </style>
 
-    </head>
-    
-        @include('templates.header')
+    </head> 
     <body>
+        @include('templates.header')
         <div class="container">
             @yield('content')
         </div>

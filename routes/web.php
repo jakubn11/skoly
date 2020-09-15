@@ -21,8 +21,8 @@ Route::get('/pocetPrijatychIT', 'pocetPrijatych@IT');
 
 Route::get('/pocetPrijatychOA', 'pocetPrijatych@OA');
 
-Route::get('/home', function () {
-    return view('home.home');
+Route::get('/lokace', function () {
+    return view('lokace.lokace');
 });
 
 
