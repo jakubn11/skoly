@@ -21,11 +21,7 @@ Route::get('/pocetPrijatychIT', 'pocetPrijatych@IT');
 
 Route::get('/pocetPrijatychOA', 'pocetPrijatych@OA');
 
-Route::get('/lokace', function () {
-    return view('lokace.lokace');
-});
-
-
+Route::get('/lokace', 'lokaceController@index');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
