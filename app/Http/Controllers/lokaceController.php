@@ -9,9 +9,9 @@ class lokaceController extends Controller
 {
     public function index()
     {
-        $lokace = DB::table('skola')->get();
+        $locations = DB::table('skola')->get();
 
-        return view('lokace.lokace', compact('lokace'));
+        return view('lokace.lokace', compact('locations'));
     }
     
 }
