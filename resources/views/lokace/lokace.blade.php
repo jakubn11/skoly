@@ -10,8 +10,8 @@
     function initMap() {
         
         var options ={
-            zoom: 2,
-            center: {lat:20.2554, lng:20.2154}
+            zoom: 9,
+            center: {lat:49.06975, lng:17.45969}
         }
 
         var map = new
@@ -31,10 +31,18 @@
             infoWindow.open(map, marker);
         });
         */
-        addMarker({coords:{lat:42.123, lng:-71.054}});
-        addMarker({coords:{lat: 25.761681, lng:-80.191788},
-                    content: '<h4>Místo</h4>'
+        @foreach(App\Skola::all() as $skola)
+        addMarker({
+            coords:{
+                lat: {{ $skola->geo_lat}},
+                lng: {{ $skola->geo_long}}
+            },
+            content: "<h3>{{ trim($skola->nazev_skoly) }}</h3>"
         });
+        /*addMarker({coords:{lat: 25.761681, lng:-80.191788},
+                    content: '<h4>Místo</h4>'
+        });*/
+        @endforeach
         
         function addMarker(props)
         {
