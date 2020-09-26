@@ -37,7 +37,7 @@
                 lat: {{ $skola->geo_lat}},
                 lng: {{ $skola->geo_long}}
             },
-            content: "<h3>{{ trim($skola->nazev_skoly) }}</h3>"
+            content: "<div><h3>{{ trim($skola->nazev_skoly) }}</h3><p>{{ $skola->mesto }}</p></div>"
         });
         /*addMarker({coords:{lat: 25.761681, lng:-80.191788},
                     content: '<h4>Místo</h4>'

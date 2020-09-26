@@ -19,4 +19,6 @@ class Skola extends Model
      * @var bool
      */
     public $timestamps = false;
+
+    
 }
