@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'skolyController@index');
+Route::get('/skoly', 'skolyController@index');
 
 Route::get('/mesta', 'mestaController@index');
 
@@ -21,7 +21,7 @@ Route::get('/pocetPrijatychIT', 'pocetPrijatych@IT');
 
 Route::get('/pocetPrijatychOA', 'pocetPrijatych@OA');
 
-Route::get('/lokace', 'lokaceController@index');
+Route::get('/', 'lokaceController@index');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

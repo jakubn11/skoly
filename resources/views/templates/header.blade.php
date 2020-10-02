@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-  <a class="navbar-brand" href="/lokace">Lokace škol</a>
+  <a class="navbar-brand" href="/">Lokace škol</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -8,7 +8,7 @@
     
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="/">Výpis škol</a>
+        <a class="nav-link" href="/skoly">Výpis škol</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/mesta">Výpis měst</a>
