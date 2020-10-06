@@ -12,19 +12,8 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <!-- Icons -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
-
-    <style>
-     table {
-         margin-top: 20px
-         }
-
-        #map {
-        width: 100%;
-        height: 600px;
-        margin-top: 100px;
-        position: center;
-      }
-    </style>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" />
 
     </head> 
     <body>

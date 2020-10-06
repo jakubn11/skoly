@@ -17,11 +17,11 @@ Route::get('/skoly', 'skolyController@index');
 
 Route::get('/mesta', 'mestaController@index');
 
-Route::get('/pocetPrijatychIT', 'pocetPrijatych@IT');
-
-Route::get('/pocetPrijatychOA', 'pocetPrijatych@OA');
+Route::get('/pocetPrijatych', 'prijatiStudenti@index');
 
 Route::get('/', 'lokaceController@index');
+
+Route::get('/zpetnaVazba', 'zpetnaVazba@index');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

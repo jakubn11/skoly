@@ -12,7 +12,7 @@ class skolyController extends Controller
         $skola = Skola::join('mesto', 'skola.mesto', '=', 'mesto.id')
         ->select('skola.*', 'mesto.nazev_mesta')
         ->orderBy('skola.nazev_skoly', 'asc')
-        ->paginate(15);
+        ->paginate(10);
         
         return view('skoly.skolyVypis', compact('skola'));
     }

@@ -13,14 +13,11 @@
       <li class="nav-item">
         <a class="nav-link" href="/mesta">Výpis měst</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         Počet přijatých
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="/pocetPrijatychIT">Počet přijatých žáků na obor IT</a>
-          <a class="dropdown-item" href="/pocetPrijatychOA">Počet přijatých žáků na obor OA</a>
-        </div>
+      <li class="nav-item">
+        <a class="nav-link" href="/pocetPrijatych">Počet přijatých</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/zpetnaVazba">Zpětná vazba</a>
       </li>
     </ul>
       <ul class="navbar-nav ml-auto">

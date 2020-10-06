@@ -10,38 +10,23 @@
     function initMap() {
         
         var options ={
-            zoom: 9,
-            center: {lat:49.06975, lng:17.45969}
+            zoom: 10,
+            center: {lat:49.005500, lng:17.173950}
         }
 
         var map = new
         google.maps.Map(document.getElementById('map'), options);
 
-        /*
-        var marker = new google.maps.Marker({
-            position: {lat:42.123, lng:-71.054},
-            map:map
-        });
-
-        var infoWindow = new google.maps.InfoWindow({
-            content: '<h4>Místo</h4>'
-        });
-
-        marker.addListener('click', function(){
-            infoWindow.open(map, marker);
-        });
-        */
-        @foreach(App\Skola::all() as $skola)
+        @foreach($lokace as $skola)
         addMarker({
             coords:{
                 lat: {{ $skola->geo_lat}},
                 lng: {{ $skola->geo_long}}
             },
-            content: "<div><h4>{{ trim($skola->nazev_skoly) }}</h4></div>"
+            content: "<div><h4>{{ trim($skola->nazev_skoly) }}</h4>" + 
+                     "<strong>Město: </strong>{{ $skola->nazev_mesta }}</div>"
         });
-        /*addMarker({coords:{lat: 25.761681, lng:-80.191788},
-                    content: '<h4>Místo</h4>'
-        });*/
+        
         @endforeach
         
         function addMarker(props)
@@ -50,16 +35,19 @@
             position:props.coords,
             map:map
         });
-            if(props.content)
+        
+        if(props.content)
             {
                 var infoWindow = new google.maps.InfoWindow({
                 content: props.content
             });
 
                 marker.addListener('click', function(){
-             infoWindow.open(map, marker);
+                infoWindow.close();
+                infoWindow.open(map, marker);
             }); 
             }
+            
         }
     }
         </script>

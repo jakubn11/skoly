@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
+use App\Skola;
 
 class lokaceController extends Controller
 {
     public function index()
     {
-        $lokace = DB::table('skola')->get();
+        $lokace = Skola::join('mesto', 'skola.mesto', '=', 'mesto.id')
+        ->select('skola.*', 'mesto.nazev_mesta')
+        ->get();
 
         return view('lokace.lokace', compact('lokace'));
     }
