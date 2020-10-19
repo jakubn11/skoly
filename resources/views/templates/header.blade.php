@@ -16,9 +16,9 @@
       <li class="nav-item">
         <a class="nav-link" href="/pocetPrijatych">Počet přijatých</a>
       </li>
-      <li class="nav-item">
+    {{--<li class="nav-item">
         <a class="nav-link" href="/zpetnaVazba">Zpětná vazba</a>
-      </li>
+      </li>--}}
     </ul>
       <ul class="navbar-nav ml-auto">
       <li class="nav-item">

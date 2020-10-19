@@ -9,7 +9,7 @@ class lokaceController extends Controller
 {
     public function index()
     {
-        $lokace = Skola::join('mesto', 'skola.mesto', '=', 'mesto.id')
+        $lokace = Skola::join('mesto', 'skola.mesto', '=', 'mesto.id_mesto')
         ->select('skola.*', 'mesto.nazev_mesta')
         ->get();
 

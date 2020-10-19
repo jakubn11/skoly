@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Počítač: 127.0.0.1
--- Vytvořeno: Úte 15. zář 2020, 11:14
+-- Vytvořeno: Pon 19. říj 2020, 18:25
 -- Verze serveru: 10.4.14-MariaDB
--- Verze PHP: 7.2.33
+-- Verze PHP: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -209,7 +209,7 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 --
 
 CREATE TABLE `mesto` (
-  `id` int(11) NOT NULL,
+  `id_mesto` int(11) NOT NULL,
   `nazev_mesta` varchar(255) COLLATE utf8_czech_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci;
 
@@ -217,7 +217,7 @@ CREATE TABLE `mesto` (
 -- Vypisuji data pro tabulku `mesto`
 --
 
-INSERT INTO `mesto` (`id`, `nazev_mesta`) VALUES
+INSERT INTO `mesto` (`id_mesto`, `nazev_mesta`) VALUES
 (42, 'Babice'),
 (34, 'Bánov'),
 (7, 'Bílovice'),
@@ -333,7 +333,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 --
 
 CREATE TABLE `obor` (
-  `id` int(11) NOT NULL,
+  `id_obor` int(11) NOT NULL,
   `nazev_oboru` varchar(255) COLLATE utf8_czech_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci;
 
@@ -341,7 +341,7 @@ CREATE TABLE `obor` (
 -- Vypisuji data pro tabulku `obor`
 --
 
-INSERT INTO `obor` (`id`, `nazev_oboru`) VALUES
+INSERT INTO `obor` (`id_obor`, `nazev_oboru`) VALUES
 (2, 'IT'),
 (1, 'OA');
 
@@ -493,7 +493,7 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 --
 
 CREATE TABLE `pocet_prijatych` (
-  `id` int(11) NOT NULL,
+  `id_pocet_prijatych` int(11) NOT NULL,
   `obor` int(11) NOT NULL,
   `skola` int(11) NOT NULL,
   `pocet` int(11) NOT NULL,
@@ -504,7 +504,7 @@ CREATE TABLE `pocet_prijatych` (
 -- Vypisuji data pro tabulku `pocet_prijatych`
 --
 
-INSERT INTO `pocet_prijatych` (`id`, `obor`, `skola`, `pocet`, `rok`) VALUES
+INSERT INTO `pocet_prijatych` (`id_pocet_prijatych`, `obor`, `skola`, `pocet`, `rok`) VALUES
 (1, 2, 3, 4, 2019),
 (2, 2, 4, 3, 2019),
 (3, 2, 11, 2, 2019),
@@ -625,7 +625,7 @@ INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`,
 --
 
 CREATE TABLE `skola` (
-  `id` int(11) NOT NULL,
+  `id_skola` int(11) NOT NULL,
   `nazev_skoly` varchar(255) COLLATE utf8_czech_ci NOT NULL,
   `mesto` int(11) NOT NULL,
   `geo_lat` double NOT NULL,
@@ -636,7 +636,7 @@ CREATE TABLE `skola` (
 -- Vypisuji data pro tabulku `skola`
 --
 
-INSERT INTO `skola` (`id`, `nazev_skoly`, `mesto`, `geo_lat`, `geo_long`) VALUES
+INSERT INTO `skola` (`id_skola`, `nazev_skoly`, `mesto`, `geo_lat`, `geo_long`) VALUES
 (1, 'ZŠ Na Výsluní Uherský Brod\r\n', 2, 49.032687, 17.643536),
 (2, 'Katolická základní škola Uherský Brod', 2, 49.022996, 17.649707),
 (3, 'ZŠ Mariánské náměstí Uherský Brod', 2, 49.026235, 17.645464),
@@ -764,7 +764,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `email_verified_at`, `password`, `remember_token`, `settings`, `created_at`, `updated_at`) VALUES
-(1, 1, 'admin', 'mvavra@admin.com', 'users/default.png', NULL, '$2y$10$NzwZ87u3ku/MM7Yc9hA2tuFuDxGzGJlhKVUeo47r1IphG7kPzAzDK', 'TSj4T5B69GtQcl1uDpwF11Ka2bJAVMIspZoHnG3T4uJqWAyUPm6jDNKAyyT4', '{\"locale\":\"en\"}', '2020-09-14 05:06:00', '2020-09-14 07:53:42');
+(2, 1, 'Admin', 'admin@admin.com', 'users/default.png', NULL, '$2y$10$doEI6XH5HZPSa/jUr1uHHeltheI0L0PundqC4NRt9gl6DbOzKcm9a', NULL, '{\"locale\":\"en\"}', '2020-09-29 16:54:13', '2020-09-29 16:54:13');
 
 -- --------------------------------------------------------
 
@@ -776,6 +776,13 @@ CREATE TABLE `user_roles` (
   `user_id` bigint(20) UNSIGNED NOT NULL,
   `role_id` bigint(20) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Vypisuji data pro tabulku `user_roles`
+--
+
+INSERT INTO `user_roles` (`user_id`, `role_id`) VALUES
+(2, 1);
 
 -- --------------------------------------------------------
 
@@ -832,7 +839,7 @@ ALTER TABLE `menu_items`
 -- Klíče pro tabulku `mesto`
 --
 ALTER TABLE `mesto`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id_mesto`),
   ADD KEY `nazev` (`nazev_mesta`);
 
 --
@@ -845,7 +852,7 @@ ALTER TABLE `migrations`
 -- Klíče pro tabulku `obor`
 --
 ALTER TABLE `obor`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id_obor`),
   ADD KEY `nazev` (`nazev_oboru`);
 
 --
@@ -873,7 +880,7 @@ ALTER TABLE `permission_role`
 -- Klíče pro tabulku `pocet_prijatych`
 --
 ALTER TABLE `pocet_prijatych`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id_pocet_prijatych`),
   ADD KEY `obor` (`obor`),
   ADD KEY `skola` (`skola`);
 
@@ -895,7 +902,7 @@ ALTER TABLE `settings`
 -- Klíče pro tabulku `skola`
 --
 ALTER TABLE `skola`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_skola`);
 
 --
 -- Klíče pro tabulku `translations`
@@ -964,7 +971,7 @@ ALTER TABLE `menu_items`
 -- AUTO_INCREMENT pro tabulku `mesto`
 --
 ALTER TABLE `mesto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `id_mesto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT pro tabulku `migrations`
@@ -976,7 +983,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT pro tabulku `obor`
 --
 ALTER TABLE `obor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_obor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pro tabulku `permissions`
@@ -988,7 +995,7 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT pro tabulku `pocet_prijatych`
 --
 ALTER TABLE `pocet_prijatych`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id_pocet_prijatych` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT pro tabulku `roles`
@@ -1006,7 +1013,7 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT pro tabulku `skola`
 --
 ALTER TABLE `skola`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+  MODIFY `id_skola` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
 -- AUTO_INCREMENT pro tabulku `translations`
@@ -1018,7 +1025,7 @@ ALTER TABLE `translations`
 -- AUTO_INCREMENT pro tabulku `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pro tabulku `zpetna_vazba`

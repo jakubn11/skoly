@@ -4,16 +4,25 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Skola;
+use App\Mesto;
 
 class skolyController extends Controller
 {
     public function index()
     {
-        $skola = Skola::join('mesto', 'skola.mesto', '=', 'mesto.id')
+        $skolaPag = Skola::join('mesto', 'skola.mesto', '=', 'mesto.id_mesto')
         ->select('skola.*', 'mesto.nazev_mesta')
         ->orderBy('skola.nazev_skoly', 'asc')
-        ->paginate(10);
+        ->paginate(15);
         
-        return view('skoly.skolyVypis', compact('skola'));
+        $skola = Skola::orderBy('nazev_skoly', 'asc')
+        ->get();
+
+        $mesto = Mesto::orderBy('nazev_mesta', 'asc')
+        ->get();
+
+        
+        
+        return view('skoly.skolyVypis', compact('skolaPag', 'skola', 'mesto'));
     }
 }
