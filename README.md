@@ -1,2 +1,2 @@
- - je potřeba si importovat databázi která je v projektu
+ - je potřeba si naimportovat databázi která je v projektu
  
