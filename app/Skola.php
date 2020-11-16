@@ -12,6 +12,7 @@ class Skola extends Model
      * @var string
      */
     protected $table = 'skola';
+    protected $primaryKey = 'id_skola';
 
      /**
      * Indicates if the model should be timestamped.

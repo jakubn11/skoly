@@ -23,8 +23,5 @@ class prijatiStudenti extends Controller
         ->get();
         
         return view('pocetPrijatych.pocetPrijatych', compact('pocet', 'obor', 'skoly'));
-    }
-
-    
-    
+    }  
 }

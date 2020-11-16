@@ -12,6 +12,7 @@ class PocetPrijatych extends Model
      * @var string
      */
     protected $table = 'pocet_prijatych';
+    protected $primaryKey = 'id_pocet_prijatych';
 
      /**
      * Indicates if the model should be timestamped.

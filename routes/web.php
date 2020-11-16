@@ -21,7 +21,17 @@ Route::get('/pocetPrijatych', 'prijatiStudenti@index');
 
 Route::get('/', 'lokaceController@index');
 
-Route::get('/zpetnaVazba', 'zpetnaVazba@index');
+Route::get('/dokumentace', 'dokumentaceController@index');
+
+Route::get('/dokumentace/download', function(){
+    $file = public_path()."/dokumentaceSkoly.pdf";
+
+    $headers = array(
+        'Content-type: application/pdf',
+    );
+
+    return Response::download($file, "DokumentaceSkoly.pdf", $headers);
+});
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

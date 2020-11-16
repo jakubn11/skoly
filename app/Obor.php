@@ -12,6 +12,7 @@ class Obor extends Model
      * @var string
      */
     protected $table = 'obor';
+    protected $primaryKey = 'id_obor';
 
      /**
      * Indicates if the model should be timestamped.
