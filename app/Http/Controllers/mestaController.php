@@ -10,6 +10,6 @@ class mestaController extends Controller
     public function index()
     {
         $mesta = Mesto::paginate(15); 
-        return view('mesta.mestaVypis', compact('mesta'));asdffsadffsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssdddddaaa
+        return view('mesta.mestaVypis', compact('mesta'));
     }
 }
