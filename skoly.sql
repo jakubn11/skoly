@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Počítač: 127.0.0.1
--- Vytvořeno: Pon 19. říj 2020, 18:25
+-- Vytvořeno: Čtv 19. lis 2020, 18:50
 -- Verze serveru: 10.4.14-MariaDB
 -- Verze PHP: 7.4.10
 
@@ -69,23 +69,23 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (19, 3, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 4),
 (20, 3, 'display_name', 'text', 'Display Name', 1, 1, 1, 1, 1, 1, NULL, 5),
 (21, 1, 'role_id', 'text', 'Role', 1, 1, 1, 1, 1, 1, NULL, 9),
-(22, 4, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
-(23, 4, 'nazev_mesta', 'text', 'Nazev Mesta', 1, 1, 1, 1, 1, 1, '{}', 2),
-(24, 5, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
-(25, 5, 'nazev_oboru', 'text', 'Nazev Oboru', 1, 1, 1, 1, 1, 1, '{}', 2),
-(26, 6, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
-(27, 6, 'obor', 'text', 'Obor', 1, 1, 1, 1, 1, 1, '{}', 2),
-(28, 6, 'skola', 'text', 'Skola', 1, 1, 1, 1, 1, 1, '{}', 3),
-(29, 6, 'pocet', 'text', 'Pocet', 1, 1, 1, 1, 1, 1, '{}', 4),
-(30, 6, 'rok', 'text', 'Rok', 1, 1, 1, 1, 1, 1, '{}', 5),
-(31, 6, 'pocet_prijatych_belongsto_obor_relationship', 'relationship', 'obor', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Obor\",\"table\":\"obor\",\"type\":\"belongsTo\",\"column\":\"obor\",\"key\":\"id\",\"label\":\"nazev_oboru\",\"pivot_table\":\"data_rows\",\"pivot\":\"0\",\"taggable\":\"0\"}', 6),
-(32, 7, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
-(33, 7, 'nazev_skoly', 'text', 'Nazev Skoly', 1, 1, 1, 1, 1, 1, '{}', 2),
-(34, 7, 'mesto', 'text', 'Mesto', 1, 1, 1, 1, 1, 1, '{}', 3),
-(35, 7, 'geo_lat', 'text', 'Geo Lat', 1, 1, 1, 1, 1, 1, '{}', 4),
-(36, 7, 'geo_long', 'text', 'Geo Long', 1, 1, 1, 1, 1, 1, '{}', 5),
-(37, 7, 'skola_belongsto_mesto_relationship', 'relationship', 'mesto', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Mesto\",\"table\":\"mesto\",\"type\":\"belongsTo\",\"column\":\"mesto\",\"key\":\"id\",\"label\":\"nazev_mesta\",\"pivot_table\":\"data_rows\",\"pivot\":\"0\",\"taggable\":\"0\"}', 6),
-(38, 6, 'pocet_prijatych_belongsto_skola_relationship', 'relationship', 'skola', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Skola\",\"table\":\"skola\",\"type\":\"belongsTo\",\"column\":\"skola\",\"key\":\"id\",\"label\":\"nazev_skoly\",\"pivot_table\":\"data_rows\",\"pivot\":\"0\",\"taggable\":\"0\"}', 7);
+(54, 16, 'id_obor', 'text', 'Id oboru', 1, 1, 1, 0, 0, 0, '{}', 1),
+(55, 16, 'nazev_oboru', 'text', 'Nazev oboru', 1, 1, 1, 1, 1, 1, '{}', 2),
+(56, 17, 'id_mesto', 'text', 'Id mesta', 1, 1, 1, 0, 0, 0, '{}', 1),
+(57, 17, 'nazev_mesta', 'text', 'Nazev mesta', 1, 1, 1, 1, 1, 1, '{}', 2),
+(58, 18, 'id_pocet_prijatych', 'text', 'Id pocet prijatych', 1, 1, 1, 0, 0, 0, '{}', 1),
+(59, 18, 'obor', 'text', 'Obor', 1, 1, 1, 1, 1, 1, '{}', 2),
+(60, 18, 'skola', 'text', 'Skola', 1, 1, 1, 1, 1, 1, '{}', 3),
+(61, 18, 'pocet', 'text', 'Pocet', 1, 1, 1, 1, 1, 1, '{}', 4),
+(62, 18, 'rok', 'text', 'Rok', 1, 1, 1, 1, 1, 1, '{}', 5),
+(63, 19, 'id_skola', 'text', 'Id skoly', 1, 1, 1, 0, 0, 0, '{}', 1),
+(64, 19, 'nazev_skoly', 'text', 'Nazev skoly', 1, 1, 1, 1, 1, 1, '{}', 2),
+(65, 19, 'mesto', 'text', 'Mesto', 1, 1, 1, 1, 1, 1, '{}', 3),
+(66, 19, 'geo_lat', 'text', 'Geo Lat', 1, 1, 1, 1, 1, 1, '{}', 4),
+(67, 19, 'geo_long', 'text', 'Geo Long', 1, 1, 1, 1, 1, 1, '{}', 5),
+(71, 19, 'skola_belongsto_mesto_relationship', 'relationship', 'Mesto', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Mesto\",\"table\":\"mesto\",\"type\":\"belongsTo\",\"column\":\"mesto\",\"key\":\"id_mesto\",\"label\":\"nazev_mesta\",\"pivot_table\":\"data_rows\",\"pivot\":\"0\",\"taggable\":\"0\"}', 6),
+(73, 18, 'pocet_prijatych_belongsto_skola_relationship', 'relationship', 'Skola', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Skola\",\"table\":\"skola\",\"type\":\"belongsTo\",\"column\":\"skola\",\"key\":\"id_skola\",\"label\":\"nazev_skoly\",\"pivot_table\":\"data_rows\",\"pivot\":\"0\",\"taggable\":\"0\"}', 7),
+(74, 18, 'pocet_prijatych_belongsto_obor_relationship', 'relationship', 'Obor', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Obor\",\"table\":\"obor\",\"type\":\"belongsTo\",\"column\":\"obor\",\"key\":\"id_obor\",\"label\":\"nazev_oboru\",\"pivot_table\":\"data_rows\",\"pivot\":\"0\",\"taggable\":\"0\"}', 8);
 
 -- --------------------------------------------------------
 
@@ -119,10 +119,10 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (1, 'users', 'users', 'User', 'Users', 'voyager-person', 'TCG\\Voyager\\Models\\User', 'TCG\\Voyager\\Policies\\UserPolicy', 'TCG\\Voyager\\Http\\Controllers\\VoyagerUserController', '', 1, 0, NULL, '2020-09-14 05:01:56', '2020-09-14 05:01:56'),
 (2, 'menus', 'menus', 'Menu', 'Menus', 'voyager-list', 'TCG\\Voyager\\Models\\Menu', NULL, '', '', 1, 0, NULL, '2020-09-14 05:01:56', '2020-09-14 05:01:56'),
 (3, 'roles', 'roles', 'Role', 'Roles', 'voyager-lock', 'TCG\\Voyager\\Models\\Role', NULL, 'TCG\\Voyager\\Http\\Controllers\\VoyagerRoleController', '', 1, 0, NULL, '2020-09-14 05:01:56', '2020-09-14 05:01:56'),
-(4, 'mesto', 'mesto', 'Mesto', 'Mesto', NULL, 'App\\Mesto', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-09-14 05:34:59', '2020-09-15 04:58:51'),
-(5, 'obor', 'obor', 'Obor', 'Obor', NULL, 'App\\Obor', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-09-14 05:39:21', '2020-09-14 05:57:12'),
-(6, 'pocet_prijatych', 'pocet-prijatych', 'Pocet Prijatych', 'Pocet prijatych', NULL, 'App\\PocetPrijatych', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-09-14 05:43:25', '2020-09-14 06:04:18'),
-(7, 'skola', 'skola', 'Skola', 'Skola', NULL, 'App\\Skola', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-09-14 05:58:33', '2020-09-14 06:03:54');
+(16, 'obor', 'obor', 'Obor', 'Obor', NULL, 'App\\Obor', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"id_obor\",\"order_display_column\":\"id_obor\",\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-11-14 17:29:41', '2020-11-14 17:51:45'),
+(17, 'mesto', 'mesto', 'Mesto', 'Mesto', NULL, 'App\\Mesto', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"id_mesto\",\"order_display_column\":\"id_mesto\",\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-11-14 17:30:47', '2020-11-14 17:51:09'),
+(18, 'pocet_prijatych', 'pocet-prijatych', 'Pocet prijatych', 'Pocet prijatych', NULL, 'App\\PocetPrijatych', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"id_pocet_prijatych\",\"order_display_column\":\"id_pocet_prijatych\",\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-11-14 17:34:10', '2020-11-14 17:51:59'),
+(19, 'skola', 'skola', 'Skola', 'Skola', NULL, 'App\\Skola', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"id_skola\",\"order_display_column\":\"id_skola\",\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-11-14 17:35:27', '2020-11-14 17:52:16');
 
 -- --------------------------------------------------------
 
@@ -197,10 +197,10 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (9, 1, 'BREAD', '', '_self', 'voyager-bread', NULL, 5, 13, '2020-09-14 05:01:56', '2020-09-14 05:01:56', 'voyager.bread.index', NULL),
 (10, 1, 'Settings', '', '_self', 'voyager-settings', NULL, NULL, 14, '2020-09-14 05:01:56', '2020-09-14 05:01:56', 'voyager.settings.index', NULL),
 (11, 1, 'Hooks', '', '_self', 'voyager-hook', NULL, 5, 13, '2020-09-14 05:01:57', '2020-09-14 05:01:57', 'voyager.hooks', NULL),
-(12, 1, 'Mestos', '', '_self', NULL, NULL, NULL, 15, '2020-09-14 05:34:59', '2020-09-14 05:34:59', 'voyager.mesto.index', NULL),
-(13, 1, 'Obor', '', '_self', NULL, NULL, NULL, 16, '2020-09-14 05:39:21', '2020-09-14 05:39:21', 'voyager.obor.index', NULL),
-(14, 1, 'Pocet Prijatyches', '', '_self', NULL, NULL, NULL, 17, '2020-09-14 05:43:25', '2020-09-14 05:43:25', 'voyager.pocet-prijatych.index', NULL),
-(15, 1, 'Skola', '', '_self', NULL, NULL, NULL, 18, '2020-09-14 05:58:33', '2020-09-14 05:58:33', 'voyager.skola.index', NULL);
+(23, 1, 'Obor', '', '_self', NULL, NULL, NULL, 15, '2020-11-14 17:29:41', '2020-11-14 17:29:41', 'voyager.obor.index', NULL),
+(24, 1, 'Mesto', '', '_self', NULL, NULL, NULL, 16, '2020-11-14 17:30:47', '2020-11-14 17:30:47', 'voyager.mesto.index', NULL),
+(25, 1, 'Pocet prijatych', '', '_self', NULL, NULL, NULL, 17, '2020-11-14 17:34:10', '2020-11-14 17:34:10', 'voyager.pocet-prijatych.index', NULL),
+(26, 1, 'Skola', '', '_self', NULL, NULL, NULL, 18, '2020-11-14 17:35:27', '2020-11-14 17:35:27', 'voyager.skola.index', NULL);
 
 -- --------------------------------------------------------
 
@@ -402,26 +402,26 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (24, 'add_settings', 'settings', '2020-09-14 05:01:56', '2020-09-14 05:01:56'),
 (25, 'delete_settings', 'settings', '2020-09-14 05:01:56', '2020-09-14 05:01:56'),
 (26, 'browse_hooks', NULL, '2020-09-14 05:01:57', '2020-09-14 05:01:57'),
-(27, 'browse_mesto', 'mesto', '2020-09-14 05:34:59', '2020-09-14 05:34:59'),
-(28, 'read_mesto', 'mesto', '2020-09-14 05:34:59', '2020-09-14 05:34:59'),
-(29, 'edit_mesto', 'mesto', '2020-09-14 05:34:59', '2020-09-14 05:34:59'),
-(30, 'add_mesto', 'mesto', '2020-09-14 05:34:59', '2020-09-14 05:34:59'),
-(31, 'delete_mesto', 'mesto', '2020-09-14 05:34:59', '2020-09-14 05:34:59'),
-(32, 'browse_obor', 'obor', '2020-09-14 05:39:21', '2020-09-14 05:39:21'),
-(33, 'read_obor', 'obor', '2020-09-14 05:39:21', '2020-09-14 05:39:21'),
-(34, 'edit_obor', 'obor', '2020-09-14 05:39:21', '2020-09-14 05:39:21'),
-(35, 'add_obor', 'obor', '2020-09-14 05:39:21', '2020-09-14 05:39:21'),
-(36, 'delete_obor', 'obor', '2020-09-14 05:39:21', '2020-09-14 05:39:21'),
-(37, 'browse_pocet_prijatych', 'pocet_prijatych', '2020-09-14 05:43:25', '2020-09-14 05:43:25'),
-(38, 'read_pocet_prijatych', 'pocet_prijatych', '2020-09-14 05:43:25', '2020-09-14 05:43:25'),
-(39, 'edit_pocet_prijatych', 'pocet_prijatych', '2020-09-14 05:43:25', '2020-09-14 05:43:25'),
-(40, 'add_pocet_prijatych', 'pocet_prijatych', '2020-09-14 05:43:25', '2020-09-14 05:43:25'),
-(41, 'delete_pocet_prijatych', 'pocet_prijatych', '2020-09-14 05:43:25', '2020-09-14 05:43:25'),
-(42, 'browse_skola', 'skola', '2020-09-14 05:58:33', '2020-09-14 05:58:33'),
-(43, 'read_skola', 'skola', '2020-09-14 05:58:33', '2020-09-14 05:58:33'),
-(44, 'edit_skola', 'skola', '2020-09-14 05:58:33', '2020-09-14 05:58:33'),
-(45, 'add_skola', 'skola', '2020-09-14 05:58:33', '2020-09-14 05:58:33'),
-(46, 'delete_skola', 'skola', '2020-09-14 05:58:33', '2020-09-14 05:58:33');
+(82, 'browse_obor', 'obor', '2020-11-14 17:29:41', '2020-11-14 17:29:41'),
+(83, 'read_obor', 'obor', '2020-11-14 17:29:41', '2020-11-14 17:29:41'),
+(84, 'edit_obor', 'obor', '2020-11-14 17:29:41', '2020-11-14 17:29:41'),
+(85, 'add_obor', 'obor', '2020-11-14 17:29:41', '2020-11-14 17:29:41'),
+(86, 'delete_obor', 'obor', '2020-11-14 17:29:41', '2020-11-14 17:29:41'),
+(87, 'browse_mesto', 'mesto', '2020-11-14 17:30:47', '2020-11-14 17:30:47'),
+(88, 'read_mesto', 'mesto', '2020-11-14 17:30:47', '2020-11-14 17:30:47'),
+(89, 'edit_mesto', 'mesto', '2020-11-14 17:30:47', '2020-11-14 17:30:47'),
+(90, 'add_mesto', 'mesto', '2020-11-14 17:30:47', '2020-11-14 17:30:47'),
+(91, 'delete_mesto', 'mesto', '2020-11-14 17:30:47', '2020-11-14 17:30:47'),
+(92, 'browse_pocet_prijatych', 'pocet_prijatych', '2020-11-14 17:34:10', '2020-11-14 17:34:10'),
+(93, 'read_pocet_prijatych', 'pocet_prijatych', '2020-11-14 17:34:10', '2020-11-14 17:34:10'),
+(94, 'edit_pocet_prijatych', 'pocet_prijatych', '2020-11-14 17:34:10', '2020-11-14 17:34:10'),
+(95, 'add_pocet_prijatych', 'pocet_prijatych', '2020-11-14 17:34:10', '2020-11-14 17:34:10'),
+(96, 'delete_pocet_prijatych', 'pocet_prijatych', '2020-11-14 17:34:10', '2020-11-14 17:34:10'),
+(97, 'browse_skola', 'skola', '2020-11-14 17:35:27', '2020-11-14 17:35:27'),
+(98, 'read_skola', 'skola', '2020-11-14 17:35:27', '2020-11-14 17:35:27'),
+(99, 'edit_skola', 'skola', '2020-11-14 17:35:27', '2020-11-14 17:35:27'),
+(100, 'add_skola', 'skola', '2020-11-14 17:35:27', '2020-11-14 17:35:27'),
+(101, 'delete_skola', 'skola', '2020-11-14 17:35:27', '2020-11-14 17:35:27');
 
 -- --------------------------------------------------------
 
@@ -465,26 +465,26 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (24, 1),
 (25, 1),
 (26, 1),
-(27, 1),
-(28, 1),
-(29, 1),
-(30, 1),
-(31, 1),
-(32, 1),
-(33, 1),
-(34, 1),
-(35, 1),
-(36, 1),
-(37, 1),
-(38, 1),
-(39, 1),
-(40, 1),
-(41, 1),
-(42, 1),
-(43, 1),
-(44, 1),
-(45, 1),
-(46, 1);
+(82, 1),
+(83, 1),
+(84, 1),
+(85, 1),
+(86, 1),
+(87, 1),
+(88, 1),
+(89, 1),
+(90, 1),
+(91, 1),
+(92, 1),
+(93, 1),
+(94, 1),
+(95, 1),
+(96, 1),
+(97, 1),
+(98, 1),
+(99, 1),
+(100, 1),
+(101, 1);
 
 -- --------------------------------------------------------
 
@@ -720,7 +720,8 @@ INSERT INTO `skola` (`id_skola`, `nazev_skoly`, `mesto`, `geo_lat`, `geo_long`) 
 (81, 'ZŠ Kuželov', 64, 48.863002, 17.482793),
 (82, 'ZŠ Střílky', 65, 49.139728, 17.213939),
 (83, 'ZŠ Luhačovice', 66, 49.1008, 17.754087),
-(84, 'Gymnázium Uherské Hradiště', 1, 49.070716, 17.463067);
+(84, 'Gymnázium Uherské Hradiště', 1, 49.070716, 17.463067),
+(86, 'test skola', 22, 17.56465, 19.4654654);
 
 -- --------------------------------------------------------
 
@@ -764,7 +765,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `email_verified_at`, `password`, `remember_token`, `settings`, `created_at`, `updated_at`) VALUES
-(2, 1, 'Admin', 'admin@admin.com', 'users/default.png', NULL, '$2y$10$doEI6XH5HZPSa/jUr1uHHeltheI0L0PundqC4NRt9gl6DbOzKcm9a', NULL, '{\"locale\":\"en\"}', '2020-09-29 16:54:13', '2020-09-29 16:54:13');
+(2, 1, 'Test', 'admin@admin.com', 'users\\November2020\\YIytpqzGzXTUsh8LAmeD.png', NULL, '$2y$10$doEI6XH5HZPSa/jUr1uHHeltheI0L0PundqC4NRt9gl6DbOzKcm9a', '3MaZyRSjtsxDJGH6J0L78bgTa3j4NL16YmUBhsSjBUzs49ClRlV8ADuyvscK', '{\"locale\":\"en\"}', '2020-09-29 16:54:13', '2020-11-16 15:45:30');
 
 -- --------------------------------------------------------
 
@@ -941,13 +942,13 @@ ALTER TABLE `zpetna_vazba`
 -- AUTO_INCREMENT pro tabulku `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 
 --
 -- AUTO_INCREMENT pro tabulku `data_types`
 --
 ALTER TABLE `data_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT pro tabulku `failed_jobs`
@@ -965,13 +966,13 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT pro tabulku `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT pro tabulku `mesto`
 --
 ALTER TABLE `mesto`
-  MODIFY `id_mesto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `id_mesto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT pro tabulku `migrations`
@@ -983,13 +984,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT pro tabulku `obor`
 --
 ALTER TABLE `obor`
-  MODIFY `id_obor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_obor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pro tabulku `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
 
 --
 -- AUTO_INCREMENT pro tabulku `pocet_prijatych`
@@ -1013,7 +1014,7 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT pro tabulku `skola`
 --
 ALTER TABLE `skola`
-  MODIFY `id_skola` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+  MODIFY `id_skola` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
 
 --
 -- AUTO_INCREMENT pro tabulku `translations`
@@ -1031,7 +1032,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pro tabulku `zpetna_vazba`
 --
 ALTER TABLE `zpetna_vazba`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Omezení pro exportované tabulky
